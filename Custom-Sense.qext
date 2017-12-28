@@ -1,0 +1,13 @@
+{
+	"type": "mashup",
+	"name": "Custom-Sense",
+	"description": "Basic mashup for Application Overview",
+	"version": "1.0.0",
+	"author": "Ajay Kakkar",
+	"keywords": "qlik-sense, visualization, mashup, Overview",
+	"license": "Free",
+	"repository": "",
+	"dependencies": {
+		"qlik-sense": ">=3.0.x"
+	}
+}
