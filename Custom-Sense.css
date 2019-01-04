@@ -1,17 +1,14 @@
-
 .flex-container {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 45px 45px 0;
 }
-
 .qvplaceholder, .qvobject {
 	flex: 1 1 auto;
 	height: 300px;
 	min-width: 400px;
 	margin: 45px 0 0 45px;
 }
-
 #popup {
 	background-color: #c3534b;
 	color: #FFFFFF;
@@ -26,7 +23,6 @@
 	z-index: 6;
 	font-family: sans-serif;
 }
-
 .close {
 	cursor: pointer;
 	background: 0 0;
@@ -42,11 +38,9 @@
 	right: 9px;
 	top: 7px;
 }
-
 .close:hover {
 	opacity: .5;
 }
-
 #popupText {
 	margin-right: 23px;
 }
