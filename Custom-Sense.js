@@ -155,7 +155,7 @@ require(["js/qlik"], function(qlik) {
 		var appid = $("#appbutton").attr('app-id');
 		var sheetid = e.target.id;
 		callbackMess(sheetid + " Sheet is Selected.");
-		$('#sheet_view').empty().append("<br><iframe src='http://localhost:4848/single/?appid=" + appid + "&sheet=" + sheetid + "&lang=en-US&opt=currsel' style='border:none; width: 100%;height: 90vh;'></iframe>");
+		$('#sheet_view').empty().append("<br><iframe src='"+window.location.origin+"/single/?appid=" + appid + "&sheet=" + sheetid + "&lang=en-US&opt=currsel' style='border:none; width: 100%;height: 90vh;'></iframe>");
 		$(this).find(".active").removeClass("active");
 		$('#' + e.target.id).parent().addClass("active");
 	});
