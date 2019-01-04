@@ -117,14 +117,21 @@ require(["js/qlik"], function(qlik) {
 		$("#appbutton").empty();
 		$("#appbutton").append(e.target.innerText + ' <b class="caret"></b>');
 		$("#appbutton").attr('app-id', e.target.id);
-		appname = $("#appbutton").text().trim();
-		app = qlik.openApp(appname, config);
-		callbackMess(appname + " is Selected.");
-		//callbacks -- inserted here --
-		//open apps -- inserted here --
-		//get objects -- inserted here --
-		//create cubes and lists -- inserted here --
-		if (app) {
+		var global = qlik.getGlobal(config);
+		global.isPersonalMode(function (reply){
+			 if(reply.qReturn){
+					//Do something
+					appname = $("#appbutton").text().trim();
+			 }
+			 else{
+				   //Do something
+				   appname = e.target.id;
+			 }
+		}).then(function(){
+			console.log(appname,":",e.target.id);
+			app = qlik.openApp(appname+"", config);
+			callbackMess(appname + " is Selected.");
+			if (app) {
 			new AppUi(app);
 			// sheet list
 			app.getList("sheet", function(reply) {
@@ -141,6 +148,7 @@ require(["js/qlik"], function(qlik) {
 				});
 			});
 		}
+		});
 	});
 	// option 2
 	$("#sheet_list").click(function(e) {
